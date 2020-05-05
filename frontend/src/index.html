@@ -1,0 +1,17 @@
+<div id="id01"></div>
+<image src="https://2.bp.blogspot.com/-vTfuwxBGQXk/XNRUiZo-XhI/AAAAAAAAHdg/xWwE_aq_2VQ421SebQXsv-jevTcAoQp9QCLcBGAs/s1600/1_6NVMEmo0qDcQjpXcXI8dtg.png"></image> 
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "http://backend-k8s-hands-on/";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var resp = JSON.parse(this.responseText);
+        document.getElementById("id01").innerHTML = "<h2>La hora es " + resp.time + "y el hostname es " + resp.hostname + "</h2>";
+
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+</script>
